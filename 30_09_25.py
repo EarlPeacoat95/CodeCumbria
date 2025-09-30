@@ -5,3 +5,8 @@ def add_six(y):
 new_var = add_six(6)
 
 print(add_six(new_var))
+
+
+
+
+dict()

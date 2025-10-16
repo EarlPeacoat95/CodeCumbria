@@ -46,6 +46,7 @@ class Triangle(Shape):
         return math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
     
     def perimeter(self):
+        return self.a + self.b + self.c
        
         
 
@@ -58,4 +59,4 @@ r = Rectangle(5,10)
 print (f"The area of your specified Rectangle is: {round(r.area())}, and the perimeter is: {round(r.perimeter())}")
 
 t = Triangle(20, 15, 30)
-print(f"The area of the specified Triangle is: {round(t.area())}")
+print(f"The area of your specified Triangle is: {round(t.area())}, and the perimeter is: {round(t.perimeter())}")

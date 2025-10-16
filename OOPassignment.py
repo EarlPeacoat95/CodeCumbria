@@ -1,6 +1,8 @@
+# Import the math library so we can use Pi etc...
+
 import math
 
-# Begin by establishing a base class from which the rest shall inherit.
+# Start by establishing a basic base class from which the child classes shall inherit.
 
 class Shape:
     def area(self):
@@ -34,15 +36,17 @@ class Rectangle(Shape):
 # For the triangle, we will need to use Herons Formula.
   
 class Triangle(Shape):
-    def __init__(self,):
-        a = side_one
-        b = side_two
-        c = side_three
-
-        def area(self):
-            return math.sqrt(s * (s - a) * (s - b) * (s - c))
-
-       math.sqrt(s * (s - a) * (s - b) * (s - c))
+    def __init__(self, a, b, c):
+      self.a = a
+      self.b = b
+      self.c = c
+         
+    def area(self):
+        s = (self.a + self.b + self.c) / 2
+        return math.sqrt(s * (s - self.a) * (s - self.b) * (s - self.c))
+    
+    def perimeter(self):
+       
         
 
 # Below are examples of using these classes and then printing the output.
@@ -50,5 +54,8 @@ class Triangle(Shape):
 c = Circle(10)
 print(f"The area of your specified Circle is: {round(c.area())}, and the perimeter is: {round(c.perimeter())}")
 
-r = Rectangle(5)
-print (f"The area of your specified Retangle is: {round(r.area())}, and the perimeter is: {round(r.perimeter())}")
+r = Rectangle(5,10)
+print (f"The area of your specified Rectangle is: {round(r.area())}, and the perimeter is: {round(r.perimeter())}")
+
+t = Triangle(20, 15, 30)
+print(f"The area of the specified Triangle is: {round(t.area())}")
